@@ -11,9 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Web.UI.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather", "CodeTest01.Data.Weather\CodeTest01.Data.Weather.csproj", "{F80DE642-AD48-471E-A550-2CE4350C10B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTest01.Data.Weather.Integration", "CodeTest01.Data.Weather.Integration\CodeTest01.Data.Weather.Integration.csproj", "{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather.Integration", "CodeTest01.Data.Weather.Integration\CodeTest01.Data.Weather.Integration.csproj", "{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTest01.IntegrationTesting", "CodeTest01.IntegrationTesting\CodeTest01.IntegrationTesting.csproj", "{6460D9A4-A66C-47BE-B1B1-5F5D21915339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.IntegrationTesting", "CodeTest01.IntegrationTesting\CodeTest01.IntegrationTesting.csproj", "{6460D9A4-A66C-47BE-B1B1-5F5D21915339}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA6BD0E4-4A66-4CAE-966F-6DDC47E21D37}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

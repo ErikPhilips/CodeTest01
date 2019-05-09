@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeTest01.Business.ZipCodeInfo
 {
-   public class ZipCodeInfoBO : IZipCodeInfoBO
+   internal class ZipCodeInfoBO : IZipCodeInfoBO
    {
       public string CityName { get; set; }
       public string TimeZone { get; set; }

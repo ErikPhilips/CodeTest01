@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CodeTest01.Business.ZipCodeInfo
 {
-   internal class ZipCodeInfoBL
+   public class ZipCodeInfoBL : IZipCodeInfoBL
    {
-   }
-
-   public class Blah
-   {
-      public Type Blahed()
+      public async Task<IZipCodeInfoBO> GetAsync(int zipCode)
       {
-         return typeof(ZipCodeInfoBL);
+         
       }
    }
 }
