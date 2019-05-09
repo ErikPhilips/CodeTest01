@@ -14,7 +14,7 @@ namespace CodeTest01.Data.Weather
 
    public interface IWeatherDL
    {
-      Task<IWeatherDO> Get(string zipcode);
+      Task<IWeatherDO> GetAsync(string zipcode);
    }
 
    public class WeatherDL : IWeatherDL
@@ -30,7 +30,7 @@ namespace CodeTest01.Data.Weather
          _httpclient = httpclient;
       }
 
-      public async Task<IWeatherDO> Get(string zipcode)
+      public async Task<IWeatherDO> GetAsync(string zipcode)
       {
          var url = string.Format(apiFormat, zipcode, _configuration.ApiKey);
          var jsonResponse = await _httpclient.GetStringAsync(url);
