@@ -1,0 +1,18 @@
+﻿Is there a specific URL requirement
+-
+What should the API return if the ZipCode is not valid (404?)
+-
+Temperature is in Kelvin, do you want it converted to F or C?
+-
+For the timezone, I assume you want the timeZoneName?
+-
+The elevation API is returned in meters, do you want meters or feet?
+
+
+
+#2
+
+What does the readme notes need to detail?
+What do I do if the response from an API is not what is expected (404, 401, timed-out etc)?
+Is it to support zipcodes outside the us?
+
