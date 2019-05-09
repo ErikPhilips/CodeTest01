@@ -22,9 +22,9 @@ This solution uses [NUnit](https://nunit.org/) for testing.
 
 For Integration tests, copy the associated `secrets-template.json` file as `secrets.json`.  
 Populate the file with your API keys.  
-`secrets.json` are ignore by this repository and will not be uploaded.
+`secrets.json` files are ignore by this repository and will not be uploaded.
 
-In Visual Studio, simply load the Test Explorer and click *Run All*.
+In Visual Studio, load the Test Explorer and click *Run All*.
 
 
 ### Break down into end to end tests
