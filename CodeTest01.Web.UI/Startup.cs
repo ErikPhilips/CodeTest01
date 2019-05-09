@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using CodeTest01.Business.ZipCodeInfo;
 using CodeTest01.Data.Weather;
 using CodeTest01.Web.UI.Formatter;
 using Microsoft.AspNetCore.Builder;
@@ -64,6 +65,8 @@ namespace CodeTest01.Web.UI
          services.AddSingleton<HttpClient>();
 
          services.AddTransient<IWeatherDL, WeatherDL>();
+
+         services.AddTransient<IZipCodeInfoBL, ZipCodeInfoBL>();
 
       }
 
