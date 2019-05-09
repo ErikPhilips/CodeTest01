@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeTest01.Business.ZipCodeInfo\CodeTest01.Business.ZipCodeInfo.csproj" />
-    <ProjectReference Include="..\CodeTest01.Data.Weather\CodeTest01.Data.Weather.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Spatial;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace CodeTest01.Data.Weather
 {
    public interface IWeatherDO
    {
-      ICoordinateDO Coordinate { get; }
+      GeographyPoint Coordinate { get; }
 
       IDayLightRangeDO DayLightRange { get; }
 
@@ -32,7 +33,7 @@ namespace CodeTest01.Data.Weather
    internal class WeatherDO : IWeatherDO
    {
       [JsonProperty("coord")]
-      public CoordinateDO Coordinate { get; set; }
+      public GeographyPoint Coordinate { get; set; }
 
       [JsonProperty("sys")]
       public DayLightRangeDO DayLightRange { get; set; }
@@ -61,8 +62,6 @@ namespace CodeTest01.Data.Weather
 
       [JsonProperty("name")]
       public string Name { get; set; }
-
-      ICoordinateDO IWeatherDO.Coordinate => Coordinate;
 
       IDayLightRangeDO IWeatherDO.DayLightRange => DayLightRange;
 

@@ -9,7 +9,7 @@ namespace CodeTest01.Business.ZipCodeInfo
    {
       public async Task<IZipCodeInfoBO> GetAsync(int zipCode)
       {
-         
+         throw new NotImplementedException();
       }
    }
 }

@@ -9,16 +9,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Business.ZipCode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Web.UI.Tests", "CodeTest01.Web.UI.Tests\CodeTest01.Web.UI.Tests.csproj", "{065F8985-74BA-4978-BEE1-58584227B631}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather", "CodeTest01.Data.Weather\CodeTest01.Data.Weather.csproj", "{F80DE642-AD48-471E-A550-2CE4350C10B9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather.Integration", "CodeTest01.Data.Weather.Integration\CodeTest01.Data.Weather.Integration.csproj", "{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.IntegrationTesting", "CodeTest01.IntegrationTesting\CodeTest01.IntegrationTesting.csproj", "{6460D9A4-A66C-47BE-B1B1-5F5D21915339}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA6BD0E4-4A66-4CAE-966F-6DDC47E21D37}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTest01.Data.TimeZone.GoogleMaps", "CodeTest01.Data.TimeZone.GoogleMaps\CodeTest01.Data.TimeZone.GoogleMaps.csproj", "{88A21661-5D46-4EA6-A645-4113AFEB248D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather.OpenWeatherMap", "CodeTest01.Data.Weather.OpenWeatherMap\CodeTest01.Data.Weather.OpenWeatherMap.csproj", "{36AB27D5-D86E-489F-9DE1-BD29771E7D4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.Weather.OpenWeatherMap.IntegrationTests", "CodeTest01.Data.Weather.OpenWeatherMap.IntegrationTests\CodeTest01.Data.Weather.OpenWeatherMap.IntegrationTests.csproj", "{EFCF0828-234A-417D-9800-2CA026588997}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTest01.Data.TimeZone.GoogleMaps.IntegrationTests", "CodeTest01.Data.TimeZone.GoogleMaps.IntegrationTests\CodeTest01.Data.TimeZone.GoogleMaps.IntegrationTests.csproj", "{2D55469E-B9FE-417D-96FA-8CE4499195DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,18 +42,26 @@ Global
 		{065F8985-74BA-4978-BEE1-58584227B631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{065F8985-74BA-4978-BEE1-58584227B631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{065F8985-74BA-4978-BEE1-58584227B631}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F80DE642-AD48-471E-A550-2CE4350C10B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F80DE642-AD48-471E-A550-2CE4350C10B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F80DE642-AD48-471E-A550-2CE4350C10B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F80DE642-AD48-471E-A550-2CE4350C10B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD80E41B-90ED-4884-ABE5-D63E8F6B44B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6460D9A4-A66C-47BE-B1B1-5F5D21915339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6460D9A4-A66C-47BE-B1B1-5F5D21915339}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6460D9A4-A66C-47BE-B1B1-5F5D21915339}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6460D9A4-A66C-47BE-B1B1-5F5D21915339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A21661-5D46-4EA6-A645-4113AFEB248D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A21661-5D46-4EA6-A645-4113AFEB248D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A21661-5D46-4EA6-A645-4113AFEB248D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A21661-5D46-4EA6-A645-4113AFEB248D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36AB27D5-D86E-489F-9DE1-BD29771E7D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36AB27D5-D86E-489F-9DE1-BD29771E7D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36AB27D5-D86E-489F-9DE1-BD29771E7D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36AB27D5-D86E-489F-9DE1-BD29771E7D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCF0828-234A-417D-9800-2CA026588997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCF0828-234A-417D-9800-2CA026588997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCF0828-234A-417D-9800-2CA026588997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCF0828-234A-417D-9800-2CA026588997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D55469E-B9FE-417D-96FA-8CE4499195DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D55469E-B9FE-417D-96FA-8CE4499195DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D55469E-B9FE-417D-96FA-8CE4499195DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D55469E-B9FE-417D-96FA-8CE4499195DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

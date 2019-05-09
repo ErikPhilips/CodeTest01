@@ -15,7 +15,7 @@ namespace CodeTest01.Web.UI.API.Version1_0
       [Route("api/v{version:apiVersion}/[controller]")]
       public IActionResult ZipcodeInformation()
       {
-         return Ok(new ZipCodeInfoBO());
+         return Ok(null);
       }
    }
 }

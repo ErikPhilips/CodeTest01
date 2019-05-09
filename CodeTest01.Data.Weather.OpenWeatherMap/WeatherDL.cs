@@ -21,20 +21,22 @@ namespace CodeTest01.Data.Weather
    {
       private readonly string apiFormat = "https://api.openweathermap.org/data/2.5/weather?zip={0},us&appid={1}";
 
-      private WeatherConfiguration _configuration;
-      private HttpClient _httpclient;
+      private readonly WeatherConfiguration _configuration;
+      private readonly HttpClient _httpClient;
 
-      public WeatherDL(WeatherConfiguration configuration, HttpClient httpclient)
+      public WeatherDL(WeatherConfiguration configuration, HttpClient httpClient)
       {
          _configuration = configuration;
-         _httpclient = httpclient;
+         _httpClient = httpClient;
       }
 
       public async Task<IWeatherDO> GetAsync(string zipcode)
       {
          var url = string.Format(apiFormat, zipcode, _configuration.ApiKey);
-         var jsonResponse = await _httpclient.GetStringAsync(url);
-         var result = JsonConvert.DeserializeObject<WeatherDO>(jsonResponse);
+         var jsonResponse = await _httpClient.GetStringAsync(url);
+         var deserializeSettings = new JsonSerializerSettings();
+         deserializeSettings.Converters.Add(new GeographyPointConverter());
+         var result = JsonConvert.DeserializeObject<WeatherDO>(jsonResponse, deserializeSettings);
          return result;
       }
    }

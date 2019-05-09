@@ -20,21 +20,21 @@ namespace CodeTest01.Data.Weather.Integration
 
 
       [Test]
-      public async Task Get_WithValidZipcode_DoesNotThrow()
+      public async Task GetAsync_WithValidZipcode_DoesNotThrow()
       {
          var weatherDL = new WeatherDL(_weatherConfiguration, HttpClient);
 
-         var result = await weatherDL.Get(WhiteHouseZipCode);
+         var result = await weatherDL.GetAsync(WhiteHouseZipCode);
 
          Assert.That(result, Is.Not.Null);
       }
 
       [Test]
-      public void Get_WithValidZipcode_ThrowsException()
+      public void GetAsync_WithInvalidZipcode_ThrowsException()
       {
          var weatherDL = new WeatherDL(_weatherConfiguration, HttpClient);
 
-         Assert.ThrowsAsync<HttpRequestException>(async () => await weatherDL.Get("NotAZipCode"));
+         Assert.ThrowsAsync<HttpRequestException>(async () => await weatherDL.GetAsync("NotAZipCode"));
       }
    }
 }
