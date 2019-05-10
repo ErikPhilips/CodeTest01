@@ -2,7 +2,7 @@
 
 Create a .NET Web API that takes ZIP-code as a parameter, then outputs city name, current temperature, time zone, and general elevation at the location with a user-friendly message. 
 
-For example, ìAt the location $CITY_NAME, the temperature is $TEMPERATURE, the timezone is $TIMEZONE, and the elevation is $ELEVATIONî. 
+For example, ‚ÄúAt the location $CITY_NAME, the temperature is $TEMPERATURE, the timezone is $TIMEZONE, and the elevation is $ELEVATION‚Äù. 
 
 Include documentation with any necessary build instructions and be prepared to discuss your approach.
 
@@ -27,7 +27,7 @@ Populate the file with your API keys.
 In Visual Studio, load the Test Explorer and click *Run All*.
 
 
-### Break down into end to end tests
+### Break down of Tests
 
 Projects ending in `.UnitTesting` test specific logic within the matching projects not ending in `.UnitTesting`.
 
