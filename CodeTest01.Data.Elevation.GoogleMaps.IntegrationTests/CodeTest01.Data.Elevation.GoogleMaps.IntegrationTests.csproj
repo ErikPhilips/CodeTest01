@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeTest01.Data.Elevation.GoogleMaps\CodeTest01.Data.Elevation.GoogleMaps.csproj" />
-    <ProjectReference Include="..\CodeTest01.IntegrationTesting\CodeTest01.IntegrationTesting.csproj" />
+    <ProjectReference Include="..\CodeTest01.TestSupport\CodeTest01.TestSupport.csproj" />
   </ItemGroup>
 
   <ItemGroup>

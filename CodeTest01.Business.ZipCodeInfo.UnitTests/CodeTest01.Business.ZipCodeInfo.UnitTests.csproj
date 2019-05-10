@@ -7,14 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Spatial" Version="7.5.4" />
+    <PackageReference Include="NSubstitute" Version="4.1.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeTest01.Business.ZipCodeInfo\CodeTest01.Business.ZipCodeInfo.csproj" />
+    <ProjectReference Include="..\CodeTest01.Data.Elevation.GoogleMaps\CodeTest01.Data.Elevation.GoogleMaps.csproj" />
+    <ProjectReference Include="..\CodeTest01.Data.TimeZone.GoogleMaps\CodeTest01.Data.TimeZone.GoogleMaps.csproj" />
     <ProjectReference Include="..\CodeTest01.Data.Weather.OpenWeatherMap\CodeTest01.Data.Weather.OpenWeatherMap.csproj" />
-    <ProjectReference Include="..\CodeTest01.TestSupport\CodeTest01.TestSupport.csproj" />
   </ItemGroup>
 
   <ItemGroup>

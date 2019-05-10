@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CodeTest01.Web.UI.API.Version1_0
 {
    [ApiVersion(Startup.API_VERSION_1_0)]
+   [Route("api/v{version:apiVersion}/[controller]")]
    public class ZipCodeController : Controller, IAutoMapper
    {
       private readonly IZipCodeInfoBL _zipCodeInfoBL;
@@ -30,14 +31,16 @@ namespace CodeTest01.Web.UI.API.Version1_0
                m => m.MapFrom(bo => bo.ElevationInMeters * 3.28084));
       }
 
-      [Route("api/v{version:apiVersion}/[controller]")]
-      public async Task<IActionResult> ZipcodeInformation(string zipCode)
+      [HttpGet("{zipcode}")]
+      public async Task<IActionResult> GetZipCodeInformation(string zipCode)
       {
          var zipCodeInfoBO = await _zipCodeInfoBL.GetAsync(zipCode);
 
-         var viewModel = zipCodeInfoBO != null ? this.Mapper().Map<ZipCodeInfoVM>(zipCodeInfoBO) : null;
+         var result = zipCodeInfoBO != null
+            ? Ok(this.Mapper().Map<ZipCodeInfoVM>(zipCodeInfoBO)) as IActionResult
+            : NotFound();
 
-         return Ok(viewModel);
+         return result;
       }
    }
 }

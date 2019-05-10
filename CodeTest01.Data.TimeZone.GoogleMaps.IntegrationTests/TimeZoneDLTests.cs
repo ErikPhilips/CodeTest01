@@ -1,4 +1,3 @@
-using CodeTest01.IntegrationTesting;
 using NUnit.Framework;
 using System;
 using System.Net.Http;

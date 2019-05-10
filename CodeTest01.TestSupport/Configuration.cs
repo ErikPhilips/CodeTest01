@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 using System;
 
-namespace CodeTest01.IntegrationTesting
+namespace CodeTest01
 {
    public static class Configuration
    {
