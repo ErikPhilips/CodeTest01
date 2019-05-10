@@ -31,7 +31,7 @@ In Visual Studio, load the Test Explorer and click *Run All*.
 
 Projects ending in `.UnitTesting` test specific logic within the matching projects not ending in `.UnitTesting`.
 
-Projects ending in `.IntegrationTesting` test the Data Access layers calls to external 3rd Party APIs.
+Projects ending in `.IntegrationTesting` test the Data Access layers calls to external 3rd Party APIs and the Presentation layer content delivery based on requirements (API to return a string not json).
 
 
 
