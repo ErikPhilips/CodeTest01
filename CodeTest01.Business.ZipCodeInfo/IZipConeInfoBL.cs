@@ -7,6 +7,6 @@ namespace CodeTest01.Business.ZipCodeInfo
 {
    public interface IZipCodeInfoBL
    {
-      Task<IZipCodeInfoBO> GetAsync(int zipCode);
+      Task<IZipCodeInfoBO> GetAsync(string zipCode);
    }
 }

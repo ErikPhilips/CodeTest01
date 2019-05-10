@@ -3,6 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Spatial;
+using Microsoft.Extensions.Options;
 
 namespace CodeTest01.Data.TimeZone
 {
@@ -23,9 +24,9 @@ namespace CodeTest01.Data.TimeZone
       private readonly TimeZoneConfiguration _configuration;
       private readonly HttpClient _httpClient;
 
-      public TimeZoneDL(TimeZoneConfiguration configuration, HttpClient httpClient)
+      public TimeZoneDL(IOptions<TimeZoneConfiguration> configuration, HttpClient httpClient)
       {
-         _configuration = configuration;
+         _configuration = configuration.Value;
          _httpClient = httpClient;
       }
       public async Task<ITimeZoneDO> GetAsync(GeographyPoint point)

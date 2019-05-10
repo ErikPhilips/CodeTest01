@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 
 namespace CodeTest01.IntegrationTesting
@@ -16,9 +17,11 @@ namespace CodeTest01.IntegrationTesting
          ConfigurationRoot = builder.Build();
       }
 
-      public static TConfiguration GetSection<TConfiguration>(string sectionName)
+      public static IOptions<TConfiguration> GetOptions<TConfiguration>(string sectionName)
+         where TConfiguration : class, new()
       {
-         var result = ConfigurationRoot.GetSection(sectionName).Get<TConfiguration>();
+         var configuration =  ConfigurationRoot.GetSection(sectionName).Get<TConfiguration>();
+         var result = Options.Create(configuration);
          return result;
       }
    }

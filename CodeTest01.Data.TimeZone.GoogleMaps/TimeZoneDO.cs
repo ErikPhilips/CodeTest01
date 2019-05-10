@@ -34,7 +34,7 @@ namespace CodeTest01.Data.TimeZone
       [JsonProperty("timeZoneId")]
       public string CanonicalCLDRId { get; set; }
 
-      [JsonProperty("timeZoneNme")]
+      [JsonProperty("timeZoneName")]
       public string LongFormName { get; set; }
 
       [JsonProperty("status")]

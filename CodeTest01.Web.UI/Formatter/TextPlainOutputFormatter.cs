@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CodeTest01.Business.ZipCodeInfo;
 using Microsoft.AspNetCore.Http;
+using CodeTest01.Web.UI.Models.API.Version1._0;
 
 namespace CodeTest01.Web.UI.Formatter
 {
@@ -22,7 +23,7 @@ namespace CodeTest01.Web.UI.Formatter
 
       protected override bool CanWriteType(Type type)
       {
-         if (typeof(IZipCodeInfoBO).IsAssignableFrom(type))
+         if (typeof(ZipCodeInfoVM).IsAssignableFrom(type))
          {
             return base.CanWriteType(type);
          }
@@ -35,9 +36,9 @@ namespace CodeTest01.Web.UI.Formatter
          var response = context.HttpContext.Response;
          var result = string.Empty;
 
-         if (context.Object is IZipCodeInfoBO zipCodeInfo)
+         if (context.Object is ZipCodeInfoVM zipCodeInfo)
          {
-            result = $"At the location {zipCodeInfo.CityName}, the temperature is {zipCodeInfo.TemperatureInKelvin}, the timezone is {zipCodeInfo.TimeZone}, and the elevation is {zipCodeInfo.ElevationInMeters}.";
+            result = $"In {zipCodeInfo.CityName}, the temperature is approximately {zipCodeInfo.TemperatureInFahrenheit:N0} degrees in Fahreneheight and the timezone is {zipCodeInfo.TimeZone}, and the elevation is approximately {zipCodeInfo.ElevationInFeet:N0} feet.";
          }
 
          await response.WriteAsync(result);

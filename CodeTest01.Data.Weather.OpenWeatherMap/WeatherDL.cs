@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -24,9 +25,9 @@ namespace CodeTest01.Data.Weather
       private readonly WeatherConfiguration _configuration;
       private readonly HttpClient _httpClient;
 
-      public WeatherDL(WeatherConfiguration configuration, HttpClient httpClient)
+      public WeatherDL(IOptions<WeatherConfiguration> configuration, HttpClient httpClient)
       {
-         _configuration = configuration;
+         _configuration = configuration.Value;
          _httpClient = httpClient;
       }
 

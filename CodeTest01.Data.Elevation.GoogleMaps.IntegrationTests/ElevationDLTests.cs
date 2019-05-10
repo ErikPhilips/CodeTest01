@@ -5,13 +5,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Spatial;
+using Microsoft.Extensions.Options;
 
 namespace CodeTest01.Data.Elevation.GoogleMaps.IntegrationTests
 {
    public class ElevationDLTests
    {
       private static readonly HttpClient HttpClient = new HttpClient();
-      private readonly ElevationConfiguration _timeZoneConfiguration;
+      private readonly IOptions<ElevationConfiguration> _timeZoneConfiguration;
       private const double WhiteHouseLatitude = 38.8977;
       private const double WhiteHouseLongitude = -77.0365;
 
@@ -19,7 +20,7 @@ namespace CodeTest01.Data.Elevation.GoogleMaps.IntegrationTests
 
       public ElevationDLTests()
       {
-         _timeZoneConfiguration = Configuration.GetSection<ElevationConfiguration>("ElevationConfiguration");
+         _timeZoneConfiguration = Configuration.GetOptions<ElevationConfiguration>("ElevationConfiguration");
       }
 
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace CodeTest01.Web.UI
@@ -19,6 +20,13 @@ namespace CodeTest01.Web.UI
 
       public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
           WebHost.CreateDefaultBuilder(args)
-              .UseStartup<Startup>();
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+               config.AddJsonFile("secrets.json", optional: false);
+            })
+            .Configure(app =>
+            {
+            })
+            .UseStartup<Startup>();
    }
 }

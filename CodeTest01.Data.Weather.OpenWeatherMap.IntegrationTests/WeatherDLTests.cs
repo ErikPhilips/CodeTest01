@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace CodeTest01.Data.Weather.Integration
 {
@@ -11,11 +12,11 @@ namespace CodeTest01.Data.Weather.Integration
    {
       private static readonly HttpClient HttpClient = new HttpClient();
       private const string WhiteHouseZipCode = "20500";
-      private readonly WeatherConfiguration _weatherConfiguration;
+      private readonly IOptions<WeatherConfiguration> _weatherConfiguration;
 
       public WeatherDLTests()
       {
-         _weatherConfiguration = Configuration.GetSection<WeatherConfiguration>("WeatherConfiguration");
+         _weatherConfiguration = Configuration.GetOptions<WeatherConfiguration>("WeatherConfiguration");
       }
 
 

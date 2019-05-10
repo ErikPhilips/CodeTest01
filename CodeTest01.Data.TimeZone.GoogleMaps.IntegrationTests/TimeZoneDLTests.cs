@@ -5,13 +5,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Spatial;
+using Microsoft.Extensions.Options;
 
 namespace CodeTest01.Data.TimeZone.GoogleMaps.IntegrationTests
 {
    public class TimeZoneDLTests
    {
       private static readonly HttpClient HttpClient = new HttpClient();
-      private readonly TimeZoneConfiguration _timeZoneConfiguration;
+      private readonly IOptions<TimeZoneConfiguration> _timeZoneConfiguration;
       private const double WhiteHouseLatitude = 38.8977;
       private const double WhiteHouseLongitude = -77.0365;
 
@@ -19,7 +20,7 @@ namespace CodeTest01.Data.TimeZone.GoogleMaps.IntegrationTests
 
       public TimeZoneDLTests()
       {
-         _timeZoneConfiguration = Configuration.GetSection<TimeZoneConfiguration>("TimeZoneConfiguration");
+         _timeZoneConfiguration =  Configuration.GetOptions<TimeZoneConfiguration>("TimeZoneConfiguration");
       }
 
 

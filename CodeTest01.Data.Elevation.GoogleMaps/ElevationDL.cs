@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Spatial;
 using System.Linq;
+using Microsoft.Extensions.Options;
 
 namespace CodeTest01.Data.Elevation
 {
@@ -24,9 +25,9 @@ namespace CodeTest01.Data.Elevation
       private readonly ElevationConfiguration _configuration;
       private readonly HttpClient _httpClient;
 
-      public ElevationDL(ElevationConfiguration configuration, HttpClient httpClient)
+      public ElevationDL(IOptions<ElevationConfiguration> configuration, HttpClient httpClient)
       {
-         _configuration = configuration;
+         _configuration = configuration.Value;
          _httpClient = httpClient;
       }
       public async Task<IElevationDO> GetSingleOrDefaultAsync(GeographyPoint point)

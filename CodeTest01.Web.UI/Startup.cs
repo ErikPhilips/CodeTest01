@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using CodeTest01.Business.ZipCodeInfo;
+using CodeTest01.Data.Elevation;
+using CodeTest01.Data.TimeZone;
 using CodeTest01.Data.Weather;
 using CodeTest01.Web.UI.Formatter;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +47,8 @@ namespace CodeTest01.Web.UI
          services.AddResponseCompression();
 
          services
-            .AddMvc(options => {
+            .AddMvc(options =>
+            {
                options.OutputFormatters.Insert(0, new TextPlainOutputFormatter());
                options.RespectBrowserAcceptHeader = true;
             })
@@ -57,17 +60,10 @@ namespace CodeTest01.Web.UI
             v.DefaultApiVersion = new ApiVersion(DEFAULT_API_VERSION_MAJOR, DEFAULT_API_VERSION_MINOR);
          });
 
-         ConfigureDependencies(services);
-      }
-
-      private void ConfigureDependencies(IServiceCollection services)
-      {
          services.AddSingleton<HttpClient>();
 
-         services.AddTransient<IWeatherDL, WeatherDL>();
-
-         services.AddTransient<IZipCodeInfoBL, ZipCodeInfoBL>();
-
+         ConfigureDataComposition(services);
+         ConfigureBusinessComposition(services);
       }
 
       public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -95,5 +91,24 @@ namespace CodeTest01.Web.UI
                    template: "{controller=Home}/{action=Index}/{id?}");
          });
       }
+
+      private void ConfigureDataComposition(IServiceCollection services)
+      {
+         services.Configure<WeatherConfiguration>(Configuration.GetSection(nameof(WeatherConfiguration)));
+         services.AddTransient<IWeatherDL, WeatherDL>();
+
+         services.Configure<ElevationConfiguration>(Configuration.GetSection(nameof(ElevationConfiguration)));
+         services.AddTransient<IElevationDL, ElevationDL>();
+
+         services.Configure<TimeZoneConfiguration>(Configuration.GetSection(nameof(TimeZoneConfiguration)));
+         services.AddTransient<ITimeZoneDL, TimeZoneDL>();
+      }
+
+      private void ConfigureBusinessComposition(IServiceCollection services)
+      {
+         services.AddTransient<IZipCodeInfoBL, ZipCodeInfoBL>();
+      }
+
+
    }
 }
